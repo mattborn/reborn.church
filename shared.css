@@ -1,0 +1,48 @@
+@import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
+
+:root {
+  --background-color: #eee9e3;
+  --link-color: #c64;
+  --text-color: #444;
+  --title-color: #222;
+}
+
+/* cascade */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--background-color);
+  color: var(--text-color);
+  font: 20px/1.7 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  text-rendering: geometricPrecision;
+}
+
+@media only screen and (max-width: 767px) {
+  body { font-size: 14px; }
+}
+
+/* https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
+a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: background-size .5s cubic-bezier(.1,1,.3,1);
+}
+a:focus,
+a:hover { background-size: 100% 2px; }
+
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* temporary, not shared */
+
+i { font-size: 64px; }
+.center { gap: 16px; }
